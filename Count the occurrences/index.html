@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Word Count Generator</title>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <h1>Word Count Generator</h1>
+    <textarea id="inputText" rows="10" cols="50"></textarea>
+    <button onclick="generateWordCount()">Count Words</button>
+    <h2>Word Count Results:</h2>
+    <div id="wordCountResults"></div>
+
+    <script>
+        function generateWordCount() {
+            const inputText = document.getElementById("inputText").value;
+            const wordCount = countWordOccurrences(inputText);
+
+            const wordCountResults = document.getElementById("wordCountResults");
+            wordCountResults.innerHTML = "";
+
+            for (const [word, count] of wordCount.entries()) {
+                const result = document.createElement("p");
+                result.textContent = `${word}: ${count}`;
+                wordCountResults.appendChild(result);
+            }
+        }
+    </script>
+</body>
+
+</html>

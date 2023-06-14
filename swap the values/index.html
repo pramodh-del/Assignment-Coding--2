@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Swap Values</title>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <h1>Swap Values</h1>
+    <label for="inputX">Value of x:</label>
+    <input type="number" id="inputX"><br>
+    <label for="inputY">Value of y:</label>
+    <input type="number" id="inputY"><br>
+    <button onclick="swapAndDisplay()">Swap Values</button>
+    <h2>Swapped Values:</h2>
+    <div id="swappedValues"></div>
+
+    <script>
+        function swapAndDisplay() {
+            const inputX = document.getElementById("inputX").value;
+            const inputY = document.getElementById("inputY").value;
+
+            const [swappedX, swappedY] = swapValues(Number(inputX), Number(inputY));
+
+            const swappedValuesDiv = document.getElementById("swappedValues");
+            swappedValuesDiv.innerHTML = `x: ${swappedX}, y: ${swappedY}`;
+        }
+    </script>
+</body>
+
+</html>

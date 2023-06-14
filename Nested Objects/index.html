@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Extract Properties</title>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <h1>Extract Properties</h1>
+    <label for="inputPerson">Person Object:</label>
+    <textarea id="inputPerson" rows="10" cols="50"></textarea><br>
+    <button onclick="extractAndDisplay()">Extract Properties</button>
+    <h2>Extracted Properties:</h2>
+    <div id="extractedProperties"></div>
+
+    <script>
+        function extractAndDisplay() {
+            const inputPerson = document.getElementById("inputPerson").value;
+            const person = JSON.parse(inputPerson);
+
+            const { name, street } = extractProperties(person);
+
+            const extractedPropertiesDiv = document.getElementById("extractedProperties");
+            extractedPropertiesDiv.innerHTML = `Name: ${name}<br>Street: ${street}`;
+        }
+    </script>
+</body>
+
+</html>
